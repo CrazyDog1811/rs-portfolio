@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 html {
@@ -33,6 +32,38 @@ button {
 button:hover {
     cursor: pointer;
     color: #ffffff;
+}
+
+h2 {
+    position: relative;
+    margin-top: 100px;
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    color: #BDAE82;
+}
+
+h2::before {
+    position: absolute;
+    content: "";
+    left: 370px;
+    top: 40px;
+    width: 274px;
+    height: 2px;
+    background-color: #BDAE82;
+}
+
+h2::after {
+    position: absolute;
+    content: "";
+    right: 370px;
+    top: 40px;
+    width: 274px;
+    height: 2px;
+    background-color: #BDAE82;
 }
 
 .page-header {
