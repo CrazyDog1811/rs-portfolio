@@ -37,6 +37,7 @@ button:hover {
 h2 {
     position: relative;
     margin-top: 100px;
+    margin-bottom: 60px;
     font-family: 'Merriweather', serif;
     font-style: normal;
     font-weight: bold;
@@ -50,7 +51,7 @@ h2::before {
     position: absolute;
     content: "";
     left: 370px;
-    top: 40px;
+    top: 38px;
     width: 274px;
     height: 2px;
     background-color: #BDAE82;
@@ -60,7 +61,7 @@ h2::after {
     position: absolute;
     content: "";
     right: 370px;
-    top: 40px;
+    top: 38px;
     width: 274px;
     height: 2px;
     background-color: #BDAE82;
@@ -78,7 +79,7 @@ h2::after {
 .logo {
     width: 50px;
     height: 50px;
-    background-image: url("./img/images/logo.svg");
+    background-image: url("./img/logo/logo.svg");
     margin-left: 20px;
 }
 
@@ -168,3 +169,65 @@ h2::after {
     color: #FFFFFF;
     margin-bottom: 25px;
 }
+
+.skills-items {
+    display: flex;
+    justify-content: space-around;
+}
+
+.skills-item {
+    flex-basis: 320px;
+    text-align: center;
+}
+
+.skills-item>span {
+    display: inline-block;
+    width: 62px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.skills-item .camera-1 {
+    background-image: url("./img/icons/camera-1.svg");
+}
+
+.skills-item .video-1 {
+    background-image: url("./img/icons/video-1.svg");
+}
+
+.skills-item .image-1 {
+    width: 66px;
+    background-image: url("./img/icons/image-1.svg");
+}
+
+.skills-item .mic-1 {
+    background-image: url("./img/icons/mic-1.svg");
+}
+
+.skills-item>h4 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 46px;
+    margin-bottom: 21px;
+}
+
+.skills-item>p {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0 10px;
+}
+ .skills-item:last-child > p {
+   max-width: 305px;
+   margin: 0 auto;
+ }
