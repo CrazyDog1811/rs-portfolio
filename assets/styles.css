@@ -252,8 +252,32 @@ h2 {
      padding: 0 10px;
      max-height: 1145px;
      overflow: hidden;
+     margin-bottom: 100px;
  }
 
  .portfolio-items .portfolio-img>img {
      vertical-align:middle;
+ }
+
+ .video-player {
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 0 20px;
+ }
+
+ .video-player>img{
+     vertical-align: middle;
+ }
+
+ .video-player .video-btn {
+     position: absolute;
+     width: 150px;
+     height: 150px;
+     background-image: url("./img/icons/Video-play.svg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-color: transparent;
+     border: none;
  }
