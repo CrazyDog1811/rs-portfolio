@@ -243,6 +243,10 @@ h2 {
     color: #BDAE82;
 }
 
+.portfolio-btns>button:not(:last-child):hover {
+    color: #ffffff;
+}
+
 .portfolio-items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -250,8 +254,6 @@ h2 {
     justify-items: center;
     row-gap: 25px;
     padding: 0 10px;
-    max-height: 1145px;
-    overflow: hidden;
     margin-bottom: 100px;
 }
 
@@ -292,7 +294,7 @@ h2 {
 .price-item {
     width: 32%;
     border: 2px solid #BDAE82;
-    padding: 43px 0;
+    padding: 41px 0;
 }
 
 .price-item>h3 {
@@ -327,6 +329,7 @@ h2 {
     text-align: center;
     color: #FFFFFF;
 }
+
 .price-item>span:last-of-type {
     margin-bottom: 40px;
 }
@@ -334,4 +337,71 @@ h2 {
 .price-item>button {
     display: block;
     margin: 0 auto;
+}
+
+.contacts {
+    display: flex;
+    justify-content: end;
+    background: url('./img/images/contacts.jpg');
+    background-size: auto 700px;
+    background-position: center center;
+    min-height: 700px;
+    padding-top: 60px;
+    padding-right: 20px;
+}
+
+.contacts-container {
+    width: calc(31.5% + 3px);
+}
+
+.contacts-container>h2 {
+    background-color: transparent;
+    width: auto;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.contacts-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-form>input {
+    height: 50px;
+    margin-bottom: 20px;
+    border: 2px solid #BDAE82;
+    padding-top: 10px;
+}
+
+.contacts-form>textarea {
+    resize: none;
+    height: 100px;
+    border: 2px solid #BDAE82;
+    margin-bottom: 30px;
+    padding-top: 4px;
+}
+
+.contacts-form>input,
+.contacts-form>textarea {
+    background-color: transparent;
+    padding-left: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contacts-form>input::placeholder,
+.contacts-form>textarea::placeholder,
+.contacts-form>input:focus,
+.contacts-form>textarea:focus {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+    color: #BDAE82;
+}
+
+.contacts-form>input:focus,
+.contacts-form>textarea:focus {
+    box-shadow: inset 1px 1px 8px rgba(255, 255, 255, 0.5);
 }
