@@ -405,3 +405,67 @@ h2 {
 .contacts-form>textarea:focus {
     box-shadow: inset 1px 1px 8px rgba(255, 255, 255, 0.5);
 }
+
+footer {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+
+.footer-data>span {
+    margin-right: 13px;
+    letter-spacing: 0.5px;
+}
+
+.footer-data>span:nth-of-type(2) {
+    font-size: 19px;
+}
+
+.footer-data>span:last-of-type {
+    font-size: 18px;
+}
+
+footer>p {
+    padding-left: 13px;
+}
+
+.social-list {
+    display: flex;
+    list-style: none;
+    padding-top: 10px;
+}
+
+.social-list>li:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.social-list>li>a {
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+.social-list>li>a:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.insta {
+    background-image: url("./img/icons/inst.svg");
+}
+.fb {
+    background-image: url("./img/icons/fb.svg");
+}
+.twitter {
+    background-image: url("./img/icons/tw.svg");
+}
+.pinterest {
+    background-image: url("./img/icons/pntr.svg");
+}
