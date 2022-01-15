@@ -28,6 +28,7 @@ button {
     font-size: 20px;
     line-height: 40px;
     border: 2px solid #BDAE82;
+    transition: 0.5s;
 }
 
 button:hover {
@@ -70,6 +71,7 @@ h2 {
     width: 50px;
     height: 50px;
     background-image: url("./img/logo/logo.svg");
+    transition: 0.5s;
 }
 
 .logo:hover {
@@ -100,6 +102,7 @@ h2 {
     color: #ffffff;
     text-transform: capitalize;
     margin-right: 27px;
+    transition: 0.5s;
 }
 
 .ul-nav>li>a:hover {
@@ -107,6 +110,7 @@ h2 {
 }
 
 .switch-lng>span {
+    display: inline-block;
     font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -115,11 +119,13 @@ h2 {
     text-align: center;
     color: #ffffff;
     padding-left: 4px;
+    transition: 0.5s;
 }
 
 .switch-lng>span:first-child:hover,
 .switch-lng>span:last-child:hover {
     cursor: pointer;
+    transform: scale(1.2);
 }
 
 .switch-lng .selected {
@@ -343,6 +349,10 @@ h2 {
     background-repeat: no-repeat;
     background-color: transparent;
     border: none;
+}
+
+.video-player .video-btn:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
 .price-items {
