@@ -560,6 +560,8 @@ footer>p {
         background-image: url('./img/images/bg-tablet.jpg');
         background-size: auto 880px;
         background-position: -330px -10px;
+        padding-left: 60px;
+        padding-right: 64px;
     }
 
     .ul-nav {
@@ -605,7 +607,7 @@ footer>p {
         min-height: 590px;
         background-position: -330px 40px;
         background-size: auto 870px;
-        padding-left: 20px;
+        padding-left: 60px;
     }
 
     .hero-content {
@@ -650,6 +652,7 @@ footer>p {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 25px;
     }
 
     .video-player>img {
@@ -710,6 +713,15 @@ footer>p {
 @media screen and (max-width: 750px) {
     .title-wrapper {
         width: 80%;
+    }
+
+    .page-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero {
+        padding-left: 20px;
     }
 
 }
