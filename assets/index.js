@@ -1,10 +1,14 @@
+import i18Obj from './js/translate.js';
+
+const langs = document.querySelector('.switch-lng');
+
 const burger = document.querySelector('.hamburger');
 const adaptMenu = document.querySelector('.ul-nav');
 
-burger.addEventListener('click', () => {
-    burger.classList.toggle('is-active');
-    adaptMenu.classList.toggle('open');
-})
+const portfolioBtns = document.querySelector('.portfolio-btns');
+const portfolioImages = document.querySelectorAll('.port-img');
+const seasons = ['winter', 'spring', 'summer', 'autumn'];
+const btns = portfolioBtns.querySelectorAll('.portfolio-btn');
 
 const closeMenu = (ev) => {
     if(ev.target.classList.contains('nav-link')) {
@@ -13,7 +17,49 @@ const closeMenu = (ev) => {
     }
 }
 
+const changeImage = (ev) => {
+    if(ev.target.classList.contains('portfolio-btn') && !ev.target.classList.contains('checked')) {
+        btns.forEach(el => el.classList.remove('checked'));
+        changeClassOfElement(ev.target, 'checked');
+        const season = ev.target.dataset.season;
+        portfolioImages.forEach((img, index) => {
+            img.src = `./assets/img/images/${season}/${index + 1}.jpg`;
+            console.log(img);
+        });
+    }
+}
+
+const preloadImages = () => {
+    seasons.forEach((el) => {
+      for(let i = 1; i <= 6; i++) {
+        const img = new Image();
+        img.src = `./assets/img/images/${el}/${i}.jpg`;
+      }
+    });
+}
+
+const changeClassOfElement = (el, className) => {
+  el.classList.add(className);
+}
+
+preloadImages();
+
+const getTranslate = (lang) => {
+    const elems = document.querySelectorAll('[data-i18]');
+    elems.forEach((el) => el.textContent = i18Obj[lang][el.dataset.i18]);
+}
+
+langs.addEventListener('click', (ev) => {
+    let lang = ev.target.dataset['i18'];
+    lang = lang ? lang : 'en';
+    getTranslate(lang);
+})
+burger.addEventListener('click', () => {
+    burger.classList.toggle('is-active');
+    adaptMenu.classList.toggle('open');
+})
 adaptMenu.addEventListener('click', closeMenu);
+portfolioBtns.addEventListener('click', changeImage);
 
 const h1style = [
   'padding: 5px 180px;',

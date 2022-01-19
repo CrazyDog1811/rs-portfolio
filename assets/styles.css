@@ -304,12 +304,12 @@ h2 {
     padding-bottom: 60px;
 }
 
-.portfolio-btns>button:not(:last-child) {
+.portfolio-btns>button:not(.checked) {
     background-color: transparent;
     color: #BDAE82;
 }
 
-.portfolio-btns>button:not(:last-child):hover {
+.portfolio-btns>button:hover {
     color: #ffffff;
 }
 
@@ -521,6 +521,7 @@ footer>p {
     background-repeat: no-repeat;
     width: 32px;
     height: 32px;
+    transition: 0.5s;
 }
 
 .social-list>li>a:hover {
