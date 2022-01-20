@@ -1,3 +1,12 @@
+:root {
+    --body-color: #000;
+    --text-color: #fff;
+    --hover-color: #fff;
+    --btn-color: #bdae82;
+    --line-color: #bdae82;
+    --portf-hover-color: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,40 +15,40 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: #000000;
+    background-color: var(--body-color);
 }
 
 .container {
     margin: 0 auto;
     max-width: 1440px;
     min-height: 100vh;
-    background-color: #000000;
+    background-color: var(--body-color);
     position: relative;
 }
 
 button {
     width: 220px;
     height: 55px;
-    background-color: #BDAE82;
+    background-color: var(--btn-color);
     color: #000000;
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 40px;
-    border: 2px solid #BDAE82;
+    border: 2px solid var(--btn-color);
     transition: 0.5s;
 }
 
 button:hover {
     cursor: pointer;
-    color: #ffffff;
+    color: var(--hover-color);
 }
 
 .title-wrapper {
     width: 49%;
     margin: 0 auto 60px;
-    background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
+    background-image: linear-gradient(to top, var(--body-color) 39px, var(--line-color) 39px, var(--line-color) 41px, var(--body-color) 41px);
 }
 
 h2 {
@@ -51,8 +60,8 @@ h2 {
     font-size: 40px;
     line-height: 80px;
     text-align: center;
-    color: #BDAE82;
-    background-color: #000000;
+    color: var(--line-color);
+    background-color: var(--body-color);
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -140,7 +149,7 @@ h2 {
 .hamburger .line {
     width: 35px;
     height: 2px;
-    background-color: #ecf0f1;
+    background-color: #ffffff;
     display: block;
     margin: 6px auto;
     -webkit-transition: all 0.3s ease-in-out;
@@ -163,6 +172,10 @@ h2 {
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.hamburger.is-active .line {
+    background-color: var(--text-color);
 }
 
 .hamburger.is-active .line:nth-child(2) {
@@ -188,6 +201,20 @@ h2 {
     -ms-transform: translateY(-13px) rotate(90deg);
     -o-transform: translateY(-13px) rotate(90deg);
     transform: translateY(-13px) rotate(90deg);
+}
+
+.theme {
+    display: inline-block;
+    background-image: url('./img/icons/carbon_sun.svg');
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.theme:hover {
+    cursor: pointer;
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
 .hero {
@@ -272,7 +299,7 @@ h2 {
     font-size: 20px;
     line-height: 40px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--text-color);
     margin-top: 46px;
     margin-bottom: 21px;
 }
@@ -284,7 +311,7 @@ h2 {
     font-size: 18px;
     line-height: 36px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--text-color);
     padding: 0 10px;
 }
 
@@ -306,11 +333,11 @@ h2 {
 
 .portfolio-btns>button:not(.checked) {
     background-color: transparent;
-    color: #BDAE82;
+    color: var(--line-color);
 }
 
 .portfolio-btns>button:hover {
-    color: #ffffff;
+    color: var(--portf-hover-color);
 }
 
 .portfolio-items {
@@ -374,7 +401,7 @@ h2 {
     font-size: 28px;
     line-height: 56px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
@@ -397,7 +424,7 @@ h2 {
     font-size: 18px;
     line-height: 36px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--text-color);
 }
 
 .price-item>span:last-of-type {
@@ -430,6 +457,7 @@ h2 {
     text-align: left;
     padding: 0;
     margin-bottom: 40px;
+    color: #bdae82;
 }
 
 .contacts-form {
@@ -485,6 +513,7 @@ footer {
     font-weight: normal;
     font-size: 20px;
     line-height: 50px;
+    background-color: #000000;
     color: #FFFFFF;
 }
 
@@ -555,7 +584,7 @@ footer>p {
 
 @media screen and (max-width: 780px) {
     .title-wrapper {
-        background-image: linear-gradient(to top, #000 18px, #bdae82 18px, #bdae82 21px, #000 20px);
+        background-image: linear-gradient(to top, var(--body-color) 18px, var(--line-color) 18px, var(--line-color) 21px, var(--body-color) 20px);
         margin-bottom: 70px;
     }
 
@@ -597,12 +626,16 @@ footer>p {
         position: absolute;
         display: flex;
         flex-direction: column;
-        background-color: black;
+        background-color: var(--body-color);
         min-height: 100vh;
         top: 0;
         right: 0;
         padding-left: 143px;
         padding-top: 134px;
+    }
+
+    .header-nav .open a {
+        color: var(--text-color);
     }
 
     .ul-nav>li>a {
@@ -737,8 +770,8 @@ footer>p {
     }
 
     footer>p {
-      margin-top: -10px;
-      margin-bottom: 5px;
+        margin-top: -10px;
+        margin-bottom: 5px;
     }
 }
 
