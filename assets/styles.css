@@ -363,8 +363,8 @@ h2 {
     margin-bottom: 100px;
 }
 
-.video-player>img {
-    vertical-align: middle;
+.video-player>video {
+    width: 100%;
 }
 
 .video-player .video-btn {
@@ -712,11 +712,6 @@ footer>p {
 
     .video-player {
         padding: 0;
-    }
-
-    .video-player>img {
-        width: 100%;
-        height: 420px;
     }
 
     .video-player .video-btn {
