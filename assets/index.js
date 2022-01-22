@@ -15,6 +15,14 @@ const portfolioImages = document.querySelectorAll('.port-img');
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
 const btns = portfolioBtns.querySelectorAll('.portfolio-btn');
 
+const videoPlayer = document.querySelector('.video-player');
+const video = videoPlayer.querySelector('video');
+const videoBtn = videoPlayer.querySelector('.video-btn');
+const volumeRange = videoPlayer.querySelector('.progress-volume');
+const progress = videoPlayer.querySelector('.progress');
+const progressBar = videoPlayer.querySelector('.progress-fill');
+const mute = videoPlayer.querySelector('.volume-icon');
+
 const closeMenu = (ev) => {
     if (ev.target.classList.contains('nav-link')) {
         burger.classList.remove('is-active');
@@ -86,6 +94,48 @@ const getLocalStorage = () => {
     }
 }
 
+/* video */
+
+const togglePlay = () => {
+    const method = video.paused ? 'play' : 'pause';
+    video[method]();
+}
+
+const updateVideoBtn = () => {
+    video.paused ? videoBtn.classList.remove('hidden')
+    : videoBtn.classList.add('hidden');
+    console.log(videoBtn);
+}
+
+function handleRangeUpdate() {
+    video[volumeRange.name] = volumeRange.value;
+}
+
+const handleProgress = () => {
+  const percent = (video.currentTime/video.duration)*100;
+  progressBar.style.flexBasis = `${percent}%`;
+}
+
+const scrub = (ev) => {
+    const scrubTime = (ev.offsetX/progress.offsetWidth)*video.duration;
+    video.currentTime = scrubTime;
+}
+
+//let isMute = false; -> should I hoist isMute here???
+const volumeSwitcher = () => {
+    mute.classList.toggle('mute');
+    if(!isMute) {
+        video.volume = 0;
+        isMute = true;
+    } else {
+        handleRangeUpdate();
+        isMute = false;
+    }
+}
+
+
+/* event listeners */
+
 langs.addEventListener('click', (ev) => {
     if (ev.target.hasAttribute('data-i18')) {
         radioLang.forEach(el => el.classList.remove('selected'));
@@ -102,8 +152,28 @@ burger.addEventListener('click', () => {
 adaptMenu.addEventListener('click', closeMenu);
 portfolioBtns.addEventListener('click', changeImage);
 theme.addEventListener('click', changeTheme);
+
+video.addEventListener('click', togglePlay);
+video.addEventListener('play', updateVideoBtn);
+video.addEventListener('pause', updateVideoBtn);
+video.addEventListener('timeupdate', handleProgress);
+videoBtn.addEventListener('click', togglePlay);
+volumeRange.addEventListener('mousemove', handleRangeUpdate);
+progress.addEventListener('click', scrub);
+let mousedown = false;
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+progress.addEventListener('mousedown', () => mousedown = true);
+progress.addEventListener('mouseup', () => mousedown = false);
+let isMute = false;
+mute.addEventListener('click', volumeSwitcher);
+
+
 window.addEventListener('beforeunload', setLocalStorage);
-window.addEventListener('load', getLocalStorage)
+window.addEventListener('load', getLocalStorage);
+
+
+
+
 
 const h1style = [
     'padding: 5px 180px;',

@@ -356,11 +356,9 @@ h2 {
 
 .video-player {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 0 20px;
     margin-bottom: 100px;
+    overflow: hidden;
 }
 
 .video-player>video {
@@ -369,6 +367,8 @@ h2 {
 
 .video-player .video-btn {
     position: absolute;
+    left: calc(50% - 75px);
+    top: calc(50% - 75px);
     width: 150px;
     height: 150px;
     background-image: url("./img/icons/Video-play.svg");
@@ -378,8 +378,54 @@ h2 {
     border: none;
 }
 
+.video-player .video-btn.hidden {
+    display: none;
+}
+
 .video-player .video-btn:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.player-controls {
+    position: absolute;
+    bottom: -22px;
+    width: calc(100% - 40px);
+    transition: 0.5s;
+}
+
+.video-player:hover .player-controls {
+    bottom: 5px;
+}
+
+.player-controls .progress {
+    display: flex;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-bottom: 5px;
+}
+
+.progress-fill {
+    flex-basis: 10%;
+    height: 10px;
+    background-color: #bdae82;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.player-controls .volume-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url('./img/icons/icon-volume-fill.svg');
+    margin-left: 10px;
+}
+
+.player-controls .volume-icon.mute {
+    background-image: url('./img/icons/icon-volume.svg'); 
+}
+
+.player-controls .volume-icon:hover {
+    cursor: pointer;
 }
 
 .price-items {
@@ -716,8 +762,14 @@ footer>p {
 
     .video-player .video-btn {
         background-image: url('./img/icons/video-play-tablet.svg');
+        left: calc(50% - 35px);
+        top: calc(50% - 35px);
         width: 65px;
         height: 65px;
+    }
+
+    .player-controls {
+        width: 100%;
     }
 
     .price-items {
