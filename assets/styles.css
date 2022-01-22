@@ -390,6 +390,7 @@ h2 {
     position: absolute;
     bottom: -22px;
     width: calc(100% - 40px);
+    background-color: rgba(0, 0, 0, 0.5);
     transition: 0.5s;
 }
 
@@ -411,6 +412,27 @@ h2 {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
+
+.player-controls .progress-volume {
+    width: 20%;
+    cursor: ew-resize;
+    background: linear-gradient(to right, #bdae82 0%, #bdae82 40%, #fff 40%, #fff 100%);
+    border: solid 2px #bdae82;
+    border-radius: 8px;
+    height: 7px;
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+}
+
+.player-controls .progress-volume::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    cursor: ew-resize;
+    background: #bdae82;
+  }
 
 .player-controls .volume-icon {
     display: inline-block;
@@ -892,6 +914,19 @@ footer>p {
         width: 100%;
     }
 
+    .progress-fill {
+       height: 6px;
+    }
+
+    .player-controls .progress-volume {
+        height: 5px;
+    }
+
+    .player-controls .progress-volume::-webkit-slider-thumb {
+        width: 7px;
+        height: 7px;
+    }
+
     .contacts {
         background-size: cover;
         background-repeat: no-repeat;
@@ -939,6 +974,10 @@ footer>p {
 
     .video-player {
         margin-bottom: 50px;
+    }
+
+    .price-item>h3 {
+        font-size: 20px;
     }
 
     .contacts {

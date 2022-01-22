@@ -104,11 +104,11 @@ const togglePlay = () => {
 const updateVideoBtn = () => {
     video.paused ? videoBtn.classList.remove('hidden')
     : videoBtn.classList.add('hidden');
-    console.log(videoBtn);
 }
 
 function handleRangeUpdate() {
-    video[volumeRange.name] = volumeRange.value;
+    video[volumeRange.name] = (volumeRange.value) / 100;
+
 }
 
 const handleProgress = () => {
@@ -158,6 +158,10 @@ video.addEventListener('play', updateVideoBtn);
 video.addEventListener('pause', updateVideoBtn);
 video.addEventListener('timeupdate', handleProgress);
 videoBtn.addEventListener('click', togglePlay);
+volumeRange.addEventListener('input', function() {
+    const value = this.value;
+    this.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${value}%, #fff ${value}%, white 100%)`
+  })
 volumeRange.addEventListener('mousemove', handleRangeUpdate);
 progress.addEventListener('click', scrub);
 let mousedown = false;
