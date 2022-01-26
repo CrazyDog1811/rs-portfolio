@@ -203,17 +203,22 @@ h2 {
     transform: translateY(-13px) rotate(90deg);
 }
 
+.theme-wrap {
+    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+}
+
 .theme {
     display: inline-block;
     position: fixed;
-    right: 0;
+    right: 5px;
     background-image: url('./img/icons/carbon_sun.svg');
     background-repeat: no-repeat;
     background-position: center;
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
     width: 45px;
     height: 45px;
-    margin-left: 10px;
     transition: 0.5s;
 }
 
