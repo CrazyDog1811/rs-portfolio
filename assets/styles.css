@@ -205,11 +205,19 @@ h2 {
 
 .theme {
     display: inline-block;
+    position: fixed;
+    right: 0;
     background-image: url('./img/icons/carbon_sun.svg');
+    background-repeat: no-repeat;
+    background-position: center;
     width: 45px;
     height: 45px;
     margin-left: 10px;
     transition: 0.5s;
+}
+
+.theme.night {
+    background-image: url('./img/icons/night.svg');
 }
 
 .theme:hover {
@@ -700,6 +708,7 @@ footer>p {
         right: 0;
         padding-left: 143px;
         padding-top: 134px;
+        box-shadow: 0 0 0 999px rgba(0, 0, 0, 0.5);
     }
 
     .header-nav .open a {

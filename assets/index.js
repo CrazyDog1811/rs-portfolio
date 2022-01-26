@@ -56,13 +56,15 @@ const changeTheme = () => {
         document.documentElement.style.setProperty('--body-color', '#fff');
         document.documentElement.style.setProperty('--text-color', '#000');
         document.documentElement.style.setProperty('--line-color', '#000');
-        document.documentElement.style.setProperty('--portf-hover-color', 'gold')
+        document.documentElement.style.setProperty('--portf-hover-color', 'gold');
+        theme.classList.remove('night');
         isDark = false;
     } else {
         document.documentElement.style.setProperty('--body-color', '#000');
         document.documentElement.style.setProperty('--text-color', '#fff');
         document.documentElement.style.setProperty('--line-color', '#bdae82');
-        document.documentElement.style.setProperty('--portf-hover-color', '#fff')
+        document.documentElement.style.setProperty('--portf-hover-color', '#fff');
+        theme.classList.add('night');
         isDark = true;
     }
 }
