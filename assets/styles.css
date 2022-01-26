@@ -210,6 +210,7 @@ h2 {
     background-image: url('./img/icons/carbon_sun.svg');
     background-repeat: no-repeat;
     background-position: center;
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
     width: 45px;
     height: 45px;
     margin-left: 10px;
@@ -222,7 +223,9 @@ h2 {
 
 .theme:hover {
     cursor: pointer;
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+.theme.night:hover {
+    filter: none;
 }
 
 .hero {
