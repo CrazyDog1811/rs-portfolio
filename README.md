@@ -1,1 +1,1 @@
-https://CrazyDog1811.github.io/rs-portfolio/tree/portfolio-part3/
+https://CrazyDog1811.github.io/rs-portfolio/
